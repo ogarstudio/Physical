@@ -1,0 +1,250 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #eee;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  color: #ff66cc;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff66cc;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1554284126-5e968f5d21d0?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff33aa;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  background: #ff66cc;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 0 10px #ff66cc;
+}
+
+.hero button:hover {
+  background: #ff33aa;
+}
+
+/* Scroll Down Button */
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px; /* Adjusted to be slightly higher */
+  background: #ff66cc;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #ff66cc;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.scroll-down:hover {
+  background: #ff33aa;
+  transform: translateX(-50%) translateY(-5px); /* Lift effect */
+}
+
+.scroll-down span {
+  font-size: 30px;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input, form textarea {
+  padding: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #1e1e1e;
+  color: #eee;
+}
+
+form button {
+  padding: 0.8rem;
+  background: #ff66cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #ff33aa;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #000;
+  color: #777;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
